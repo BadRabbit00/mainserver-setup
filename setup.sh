@@ -3,6 +3,7 @@
 D=/dev/nvme1n1
 O=noatime,compress=zstd:1
 
+mount -o $O,subvol=@ ${D}p2 /mnt
 mount -o $O,subvol=@home      ${D}p2 /mnt/home
 mount -o $O,subvol=@snapshots ${D}p2 /mnt/.snapshots
 mount -o $O,subvol=@log       ${D}p2 /mnt/var/log
